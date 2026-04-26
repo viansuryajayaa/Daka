@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile/core/constants/constant_routes.dart';
-import 'package:mobile/features/auth/presentations/pages/register_screen.dart';
+import 'package:mobile/features/auth/login_page/presentations/pages/login_screen.dart';
 
-mixin RegisterCubit on State<RegisterScreen> {
+mixin LoginCubit on State<LoginScreen> {
   @override
   void initState() {
     super.initState();
@@ -14,11 +14,11 @@ mixin RegisterCubit on State<RegisterScreen> {
     super.dispose();
   }
 
-  void onRegisterPressed(BuildContext context) {
+  void onLoginPressed(BuildContext context) {
     context.goNamed(ConstantRoutes.home);
   }
 
-  void onLoginPressed(BuildContext context) {
-    context.goNamed(ConstantRoutes.login);
+  void onRegisterPressed(BuildContext context) {
+    context.pushNamed(ConstantRoutes.register);
   }
 }

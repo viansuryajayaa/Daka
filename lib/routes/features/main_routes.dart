@@ -28,22 +28,24 @@ List<RouteBase> mainRoutes = [
           ),
         ],
       ),
-      // StatefulShellBranch(
-      //   routes: [
-      //     GoRoute(
-      //       path: ConstantRoutes.history,
-      //       builder: (context, state) => const HistoryScreen(),
-      //     ),
-      //   ],
-      // ),
-      // StatefulShellBranch(
-      //   routes: [
-      //     GoRoute(
-      //       path: ConstantRoutes.profile,
-      //       builder: (context, state) => const ProfileScreen(),
-      //     ),
-      //   ],
-      // ),
+      StatefulShellBranch(
+        routes: [
+          GoRoute(
+            path: ConstantRoutes.history,
+            builder: (context, state) =>
+                const Scaffold(body: Center(child: Text('History'))),
+          ),
+        ],
+      ),
+      StatefulShellBranch(
+        routes: [
+          GoRoute(
+            path: ConstantRoutes.profile,
+            builder: (context, state) =>
+                const Scaffold(body: Center(child: Text('Profile'))),
+          ),
+        ],
+      ),
     ],
   ),
 ];

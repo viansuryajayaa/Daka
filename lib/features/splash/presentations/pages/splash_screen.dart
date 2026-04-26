@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> with SplashCubit {
           crossAxisAlignment: .center,
           children: [
             Image.asset('assets/images/splash.png'),
-            Text('Nafanesia Academy'),
+            Text('Nafanesia Work'),
             Text('Engineering Exellence'),
           ],
         ),

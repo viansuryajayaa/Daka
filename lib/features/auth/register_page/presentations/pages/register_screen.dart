@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/features/auth/presentations/cubit/register_cubit.dart';
+import 'package:mobile/features/auth/register_page/presentations/cubit/register_cubit.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
