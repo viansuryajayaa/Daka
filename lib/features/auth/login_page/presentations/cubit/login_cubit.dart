@@ -4,6 +4,10 @@ import 'package:mobile/core/constants/constant_routes.dart';
 import 'package:mobile/features/auth/login_page/presentations/pages/login_screen.dart';
 
 mixin LoginCubit on State<LoginScreen> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  bool isPasswordVisible = true;
+
   @override
   void initState() {
     super.initState();
@@ -11,6 +15,8 @@ mixin LoginCubit on State<LoginScreen> {
 
   @override
   void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
     super.dispose();
   }
 
@@ -20,5 +26,11 @@ mixin LoginCubit on State<LoginScreen> {
 
   void onRegisterPressed(BuildContext context) {
     context.pushNamed(ConstantRoutes.register);
+  }
+
+  void togglePasswordVisibility() {
+    setState(() {
+      isPasswordVisible = !isPasswordVisible;
+    });
   }
 }

@@ -4,6 +4,15 @@ import 'package:mobile/core/constants/constant_routes.dart';
 import 'package:mobile/features/auth/register_page/presentations/pages/register_screen.dart';
 
 mixin RegisterCubit on State<RegisterScreen> {
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController nipController = TextEditingController();
+  final TextEditingController divisionController = TextEditingController();
+  bool isPasswordVisible = true;
+
+  String? selectedCompany;
+
   @override
   void initState() {
     super.initState();
@@ -11,6 +20,11 @@ mixin RegisterCubit on State<RegisterScreen> {
 
   @override
   void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    nipController.dispose();
+    divisionController.dispose();
     super.dispose();
   }
 
@@ -20,5 +34,11 @@ mixin RegisterCubit on State<RegisterScreen> {
 
   void onLoginPressed(BuildContext context) {
     context.goNamed(ConstantRoutes.login);
+  }
+
+  void togglePasswordVisibility() {
+    setState(() {
+      isPasswordVisible = !isPasswordVisible;
+    });
   }
 }
